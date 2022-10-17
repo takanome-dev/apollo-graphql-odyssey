@@ -16,7 +16,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-emotion": "10.0.0",
-    "react-markdown": "6.0.3",
+    "react-markdown": "8.0.3",
     "react-player": "2.11.0",
     "react-scripts": "4.0.3"
   },
