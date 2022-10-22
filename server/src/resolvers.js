@@ -2,13 +2,19 @@ const resolvers = {
   Query: {
     // returns an array of Tracks that will be used to populate
     // the homepage grid of our web client
-    tracksForHome: (_, __, { dataSources }) => {
+    tracksForHome: (parent, args, { dataSources }, info) => {
       return dataSources.trackAPI.getTracksForHome();
+    },
+    track: (parent, { id }, { dataSources }) => {
+      return dataSources.trackAPI.getTrack(id);
     },
   },
   Track: {
-    author: (parent, _, { dataSources }) => {
+    author: (parent, args, { dataSources }, info) => {
       return dataSources.trackAPI.getAuthor(parent.authorId);
+    },
+    modules: ({ id }, _, { dataSources }) => {
+      return dataSources.trackAPI.getTrackModules(id);
     },
   },
 };
