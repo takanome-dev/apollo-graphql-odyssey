@@ -5,6 +5,7 @@ const typeDefs = gql`
   type Query {
     tracksForHome: [Track!]
     track(id: ID!): Track
+    module(id: ID!): Module!
   }
 
   "A Track type is a group of Modules that teaches about a specific topic"
@@ -34,6 +35,9 @@ const typeDefs = gql`
     id: ID!
     title: String
     length: Int
+    videoUrl: String
+    content: String
+    # parentTitle: String
   }
 `;
 
