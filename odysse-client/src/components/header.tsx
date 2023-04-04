@@ -1,32 +1,32 @@
 import React from "react";
-import { colors, widths } from "../styles";
-import styled from "@emotion/styled";
-import { Link } from "@reach/router";
 import logo from "../assets/space_cat_logo.png";
+import { Link } from "@tanstack/router";
 
 /**
  * Header renders the top navigation
  * for this particular tutorial level, it only holds the home button
  */
 
-const Header = ({ children }) => {
+const Header = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div className="flex items-center justify-center border border-pink-100 shadow p-4 bg-white">
-      <div className="">
-        <HomeButtonContainer>
-          <HomeLink to="/">
-            <HomeButton>
-              <LogoContainer>
-                <Logo src={logo} />
-              </LogoContainer>
-              <Title>
-                <h3>Catstronaut</h3>
-                <div>Kitty space academy</div>
-              </Title>
-            </HomeButton>
-          </HomeLink>
-        </HomeButtonContainer>
-        {children}
+      <div className="w-[1100px]">
+        <div className="flex flex-1">
+          <Link to="/" className="no-underline">
+            <div className="flex text-pink-500 items-center hover:text-pink-700">
+              <div className="flex self-center">
+                <img src={logo} className="h-16 w-16 mr-8" />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="leading-4 mb-0">Catstronaut</h3>
+                <div className="text-[0.9em] leading-[0.8em] pl-2">
+                  Kitty space academy
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+        {children && <div className="flex">{children}</div>}
       </div>
     </div>
   );
@@ -47,47 +47,47 @@ export default Header;
 //   backgroundColor: 'white',
 // });
 
-const Container = styled.div({
-  width: `${widths.regularPageWidth}px`,
-});
+// const Container = styled.div({
+//   width: `${widths.regularPageWidth}px`,
+// });
 
-const HomeLink = styled(Link)({
-  textDecoration: "none",
-});
+// const HomeLink = styled(Link)({
+//   textDecoration: "none",
+// });
 
-const HomeButtonContainer = styled.div({
-  display: "flex",
-  flex: 1,
-});
+// const HomeButtonContainer = styled.div({
+//   display: "flex",
+//   flex: 1,
+// });
 
-const HomeButton = styled.div({
-  display: "flex",
-  flexDirection: "row",
-  color: colors.accent,
-  alignItems: "center",
-  ":hover": {
-    color: colors.pink.dark,
-  },
-});
+// const HomeButton = styled.div({
+//   display: "flex",
+//   flexDirection: "row",
+//   color: colors.accent,
+//   alignItems: "center",
+//   ":hover": {
+//     color: colors.pink.dark,
+//   },
+// });
 
-const LogoContainer = styled.div({ display: "flex", alignSelf: "center" });
+// const LogoContainer = styled.div({ display: "flex", alignSelf: "center" });
 
-const Logo = styled.img({
-  height: 60,
-  width: 60,
-  marginRight: 8,
-});
+// const Logo = styled.img({
+//   height: 60,
+//   width: 60,
+//   marginRight: 8,
+// });
 
-const Title = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  h3: {
-    lineHeight: "1em",
-    marginBottom: 0,
-  },
-  div: {
-    fontSize: "0.9em",
-    lineHeight: "0.8em",
-    paddingLeft: 2,
-  },
-});
+// const Title = styled.div({
+//   display: "flex",
+//   flexDirection: "column",
+//   h3: {
+//     lineHeight: "1em",
+//     marginBottom: 0,
+//   },
+//   div: {
+//     fontSize: "0.9em",
+//     lineHeight: "0.8em",
+//     paddingLeft: 2,
+//   },
+// });

@@ -1,6 +1,5 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { LoadingSpinner } from '@apollo/space-kit/Loaders/LoadingSpinner';
+import React from "react";
+import { LoadingSpinner } from "@apollo/space-kit/Loaders/LoadingSpinner";
 
 /**
  * Query Results conditionally renders Apollo useQuery hooks states:
@@ -10,16 +9,19 @@ const QueryResult = ({ loading, error, data, children }) => {
   if (error) {
     return <p>ERROR: {error.message}</p>;
   }
+
   if (loading) {
     return (
-      <SpinnerContainer>
+      <div className="flex justify-center items-center w-full h-screen">
         <LoadingSpinner data-testid="spinner" size="large" theme="grayscale" />
-      </SpinnerContainer>
+      </div>
     );
   }
+
   if (!data) {
     return <p>Nothing to show...</p>;
   }
+
   if (data) {
     return children;
   }
@@ -27,11 +29,11 @@ const QueryResult = ({ loading, error, data, children }) => {
 
 export default QueryResult;
 
-/** Query Result styled components */
-const SpinnerContainer = styled.div({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '100%',
-  height: '100vh',
-});
+// /** Query Result styled components */
+// const SpinnerContainer = styled.div({
+//   display: 'flex',
+//   justifyContent: 'center',
+//   alignItems: 'center',
+//   width: '100%',
+//   height: '100vh',
+// });
