@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/space_cat_logo.png";
-import { Link } from "@tanstack/router";
+import { Link } from "@reach/router";
 
 /**
  * Header renders the top navigation

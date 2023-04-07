@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "@tanstack/router";
+import { Link } from "@reach/router";
 import { humanReadableTimeFromSeconds } from "../utils/helpers";
+import { Track } from "../types";
 
 /**
  * Track Card component renders basic info in a card format
  * for each track populating the tracks grid homepage.
  */
-const TrackCard = ({ track }) => {
+const TrackCard = ({ track }: { track: Track }) => {
   const { title, thumbnail, author, length, modulesCount, id } = track;
 
   return (

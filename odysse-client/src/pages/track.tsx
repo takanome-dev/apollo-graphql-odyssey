@@ -1,7 +1,8 @@
-import { gql, useQuery } from '@apollo/client';
-import React from 'react';
-import { Layout, QueryResult } from '../components';
-import TrackDetail from '../components/track-detail';
+import { gql, useQuery } from "@apollo/client";
+import React from "react";
+import Layout from "../components/layout";
+import QueryResult from "../components/query-result";
+import TrackDetail from "../components/track-detail";
 
 export const GET_TRACK = gql`
   query GetTrack($trackId: ID!) {
