@@ -1,19 +1,15 @@
 import { gql, useQuery } from "@apollo/client";
-import React from "react";
 import Layout from "../components/layout";
 import QueryResult from "../components/query-result";
 import TrackCard from "../containers/track-card";
 import { Track } from "../types";
+import { RouteComponentProps } from "@reach/router";
 
 interface Response {
   tracksForHome: Track[];
 }
 
-/**
- * Tracks Page is the Catstronauts home page.
- * We display a grid of tracks fetched with useQuery with the TRACKS query
- */
-const Tracks = () => {
+const Tracks = (props: RouteComponentProps) => {
   const TRACKS = gql`
     query GetTracks {
       tracksForHome {

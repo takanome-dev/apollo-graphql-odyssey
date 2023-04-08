@@ -3,6 +3,16 @@ import React from "react";
 import Layout from "../components/layout";
 import QueryResult from "../components/query-result";
 import TrackDetail from "../components/track-detail";
+import { RouteComponentProps } from "@reach/router";
+import { Track as TrackType } from "../types";
+
+interface Props extends RouteComponentProps {
+  trackId?: string;
+}
+
+interface Response {
+  track: TrackType;
+}
 
 export const GET_TRACK = gql`
   query GetTrack($trackId: ID!) {
@@ -28,9 +38,9 @@ export const GET_TRACK = gql`
   }
 `;
 
-const Track = ({ trackId }) => {
-  const { data, loading, error } = useQuery(GET_TRACK, {
-    variables: { trackId },
+const Track = (props: Props) => {
+  const { data, loading, error } = useQuery<Response>(GET_TRACK, {
+    variables: { trackId: props.trackId },
   });
 
   return (

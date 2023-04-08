@@ -4,13 +4,11 @@ import { Link } from "@reach/router";
 import ContentSection from "./content-section";
 import MarkDown from "./md-content";
 import { Button, IconBook, IconRun, IconTime, IconView } from "./icons";
+import { Track } from "../types";
 
-/**
- * Track Detail component renders the main content of a given track:
- * author, length, number of views, modules list, among other things.
- * It provides access to the first module of the track.
- */
-const TrackDetail = ({ track }) => {
+const TrackDetail = ({ track }: { track?: Track }) => {
+  if (!track) return null;
+
   const {
     title,
     description,
@@ -29,42 +27,54 @@ const TrackDetail = ({ track }) => {
         alt=""
         className="object-cover max-h-[400px] rounded-md mb-8"
       />
-      <div className="flex flex-col items-center p-5 rounded-md mb-8 border bg-slate-300">
-        <div className="flex justify-between items-center w-full pb-5 mb-5 border">
-          <h1 className="w-full text-center mb-1">{title}</h1>
+      <div className="flex flex-col items-center p-5 rounded-md mb-8 border  bg-[#FCFDFF]">
+        <div className="flex justify-between items-center w-full pb-5 mb-5 border-b">
+          <h1 className="w-full text-center mb-1 text-4xl text-slate-800 font-bold">
+            {title}
+          </h1>
         </div>
-        <div className="flex justify-between items-center w-full pb-5 mb-5 border">
+        <div className="flex justify-between items-center w-full pb-5 mb-5 border-b">
           <div className="flex flex-col items-center justify-between text-slate-900 self-center">
-            <h4 className="mb-1">Track details</h4>
-            <div className="flex items-center max-h-5 w-full">
-              <IconView width="16px" className="max-h-4" />
+            <h4 className="mb-1 text-base font-semibold text-slate-800">
+              Track details
+            </h4>
+            <div className="flex items-center max-h-6 w-full">
+              <IconView width="16px" className="max-h-4 text-slate-500" />
               <div id="viewCount" className="ml-2 text-pink-500">
                 {numberOfViews} view(s)
               </div>
             </div>
-            <div className="flex items-center max-h-5 w-full">
-              <IconBook width="14px" height="14px" className="max-h-4" />
-              <div className="ml-2">{modulesCount} modules</div>
+            <div className="flex items-center max-h-6 w-full">
+              <IconBook
+                width="14px"
+                height="14px"
+                className="max-h-4 text-slate-500"
+              />
+              <div className="ml-2 text-slate-600">{modulesCount} modules</div>
             </div>
-            <div className="flex items-center max-h-5 w-full">
-              <IconTime width="14px" className="max-h-4" />
-              <div className="ml-2">{humanReadableTimeFromSeconds(length)}</div>
+            <div className="flex items-center max-h-6 w-full">
+              <IconTime width="14px" className="max-h-4 text-slate-500" />
+              <div className="ml-2 text-slate-600">
+                {humanReadableTimeFromSeconds(length)}
+              </div>
             </div>
           </div>
           <div className="flex flex-col items-center justify-between text-slate-900 self-center">
-            <h4>Author</h4>
+            <h4 className="mb-1 text-base font-semibold text-slate-800">
+              Author
+            </h4>
             <img
               src={author.photo}
               className="w-8 h-8 mb-2 rounded-full object-cover"
             />
-            <div className="">{author.name}</div>
+            <small className="text-slate-600">{author.name}</small>
           </div>
           <div>
             <Link to={`./module/${modules[0]["id"]}`} className="text-white">
               <Button
                 icon={<IconRun width="20px" />}
-                // color={colors.pink.base}
-                className="text-pink-500"
+                color="#f25cc1"
+                // className="text-pink-500"
                 size="large"
               >
                 Start Track
@@ -74,7 +84,9 @@ const TrackDetail = ({ track }) => {
         </div>
         <div className="w-full">
           <div className="flex flex-col items-center justify-between text-slate-900 self-center">
-            <h4>Modules</h4>
+            <h4 className="mb-1 text-base font-semibold text-slate-800">
+              Modules
+            </h4>
             <ul className="list-none p-0 m-0 mt-1">
               {modules.map(module => (
                 <li
@@ -82,7 +94,7 @@ const TrackDetail = ({ track }) => {
                   className="flex justify-between pb-[2px] text-[1em]"
                 >
                   <div>{module.title}</div>
-                  <div className="ml-8 text-slate-400">
+                  <div className="ml-8 text-slate-500">
                     {humanReadableTimeFromSeconds(module.length)}
                   </div>
                 </li>

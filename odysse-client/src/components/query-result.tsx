@@ -1,11 +1,17 @@
 import React from "react";
 import { LoadingSpinner } from "@apollo/space-kit/Loaders/LoadingSpinner";
+import { ApolloError } from "@apollo/client";
 
-/**
- * Query Results conditionally renders Apollo useQuery hooks states:
- * loading, error or its children when data is ready
- */
-const QueryResult = ({ loading, error, data, children }) => {
+interface Props {
+  loading: boolean;
+  error: ApolloError | undefined;
+  data: any;
+  children: React.ReactNode;
+}
+
+const QueryResult = (props: Props): JSX.Element => {
+  const { loading, error, data, children } = props;
+
   if (error) {
     return <p>ERROR: {error.message}</p>;
   }
@@ -22,18 +28,7 @@ const QueryResult = ({ loading, error, data, children }) => {
     return <p>Nothing to show...</p>;
   }
 
-  if (data) {
-    return children;
-  }
+  return <>{children}</>;
 };
 
 export default QueryResult;
-
-// /** Query Result styled components */
-// const SpinnerContainer = styled.div({
-//   display: 'flex',
-//   justifyContent: 'center',
-//   alignItems: 'center',
-//   width: '100%',
-//   height: '100vh',
-// });

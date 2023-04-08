@@ -1,26 +1,30 @@
-import React from "react";
 import ReactPlayer from "react-player/youtube";
 import MarkDown from "./md-content";
 import { cn } from "../utils/classname";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import ContentSection from "./content-section";
 import ModulesNav from "./modules-navigation";
+import { Module, Track } from "../types";
 
-/**
- * Module Detail renders content of a given module:
- * Video player, modules navigation and markdown content
- */
-const ModuleDetail = ({ track, module }) => {
-  const { videoUrl, title, content } = module;
+interface Props {
+  track?: Track;
+  module?: Module;
+}
+
+const ModuleDetail = ({ track, module }: Props) => {
   const { width } = useWindowDimensions();
+
+  if (!module) return null;
+
+  const { videoUrl, title, content } = module;
 
   return (
     <>
-      <div className="flex justify-center bg-slate-500 p-5 border border-b-pink-500">
+      <div className="flex justify-center bg-slate-800 p-5 border-b border-b-pink-500">
         <div
           className={cn(
-            "flex self-center w-full max-w-[1600px] max-h-[(1600*(2/3))/(16/9)px]",
-            width && `h-[((${width}-60)*(2/3))/(16/9)px]`
+            "flex self-center w-full max-w-[1600px] max-h-[490px]"
+            // width && `h-[((${width}-60)*(2/3))/(16/9)px]`
           )}
         >
           <div className="w-[66%]">
@@ -30,7 +34,7 @@ const ModuleDetail = ({ track, module }) => {
         </div>
       </div>
       <ContentSection>
-        <h1 className="mt-2 mb-6 pb-4 text-slate-400 border border-b-pink-300">
+        <h1 className="mt-2 mb-6 pb-4 text-slate-800 text-4xl font-semibold border-b border-b-pink-300">
           {title}
         </h1>
         <MarkDown content={content} />

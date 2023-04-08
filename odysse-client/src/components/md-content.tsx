@@ -1,38 +1,24 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import { cn } from "../utils/classname";
 
 /**
  * Markdown component is a simple style wrapper for markdown content used across our app
  */
-const MarkDown = ({ content }) => {
-  return <ReactMarkdown children={content} className="text-slate-800" />;
+const MarkDown = ({ content }: { content: string }) => {
+  return (
+    <ReactMarkdown
+      children={content}
+      className={cn(
+        "text-slate-600 text-sm",
+        "[&>h1]:text-2xl [&>h1]:font-semibold [&>h1]:text-slate-700",
+        "[&>h2]:text-xl [&>h2]:font-semibold [&>h2]:text-slate-700",
+        "[&>h3]:text-lg [&>h3]:font-semibold [&>h3]:text-slate-700",
+        "[&>a]:text-pink-500 [&>a]:hover:text-pink-600",
+        "[&>pre]:p-5 [&>pre]:rounded-md [&>pre]:border [&>pre]:border-slate-500 [&>pre]:bg-slate-100 [&>pre]:text-slate-700 [&>pre]:font-mono [&>pre]:text-sm"
+      )}
+    />
+  );
 };
 
 export default MarkDown;
-
-/** Markdown styled components */
-// const StyledMarkdown = styled(ReactMarkdown)({
-//   color: colors.grey.darker,
-
-//   h1: {
-//     fontSize: '1.7em',
-//   },
-//   h2: {
-//     fontSize: '1.4em',
-//   },
-//   h3: {
-//     fontSize: '1.2em',
-//   },
-//   a: {
-//     color: colors.pink.base,
-//   },
-//   pre: {
-//     padding: 20,
-//     borderRadius: 4,
-//     border: `solid 1px ${colors.silver.dark}`,
-//     backgroundColor: colors.silver.base,
-//     code: {
-//       fontSize: '0.9em',
-//     },
-//   },
-// });

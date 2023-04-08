@@ -6,6 +6,9 @@ export interface Track {
   length: number;
   modulesCount: number;
   author: Author;
+  description: string;
+  numberOfViews: number;
+  modules: Module[];
 }
 
 export interface Author {
@@ -13,4 +16,13 @@ export interface Author {
   id: string;
   name: string;
   photo: string;
+}
+
+export interface Module {
+  __typename: string;
+  id: string;
+  title: string;
+  length: number;
+  content: string;
+  videoUrl: string;
 }

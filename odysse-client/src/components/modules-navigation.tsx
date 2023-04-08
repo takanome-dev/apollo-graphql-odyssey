@@ -4,17 +4,21 @@ import { Link } from "@reach/router";
 import { humanReadableTimeFromSeconds } from "../utils/helpers";
 import { cn } from "../utils/classname";
 import { IconArrowRight, IconDoubleArrowRight } from "./icons";
+import { Module, Track } from "../types";
 
-/**
- * Module Navigation: displays a list of modules titles
- * from a track and navigates to the modules page
- */
-const ModulesNav = ({ module, track }) => {
+interface Props {
+  track?: Track;
+  module?: Module;
+}
+
+const ModulesNav = ({ module, track }: Props) => {
+  if (!track || !module) return null;
+
   return (
-    <div className="relative w-[33%] ml-5 bg-slate-400 rounded-lg border overflow-auto">
-      <div className="flex sticky height-[70px] items-center justify-center text-center bg-pink-500 border border-b-pink-500 hover:bg-slate-500">
-        <h4>
-          <Link to="../.." className="no-underline text-slate-100">
+    <div className="relative w-[33%] ml-5 bg-slate-800 rounded-lg border border-slate-700 overflow-auto">
+      <div className="flex sticky h-[70px] items-center justify-center text-center bg-slate-800 border-b border-b-pink-500 hover:bg-slate-900">
+        <h4 className="text-2xl">
+          <Link to="../.." className="no-underline text-[#EBEEF0]">
             {track.title}
           </Link>
         </h4>
@@ -22,17 +26,17 @@ const ModulesNav = ({ module, track }) => {
       <ul className="list-none m-0 p-0 overflow-scroll h-[calc(100%-70px)]">
         {track.modules.map(navModule => (
           <li
-            className="border border-b-slate-900 last:border-b-0"
+            className="border-b border-b-slate-700 last:border-b-0"
             key={`module_${navModule.id}`}
           >
             <div>
               <Link to={`../${navModule.id}`} className="flex items-center">
                 <div
                   className={cn(
-                    "min-h-[80px] p-4 flex items-center justify-between flex-1 hover:text-white",
+                    "min-h-[80px] py-2 px-5 flex items-center justify-between flex-1 hover:text-white",
                     navModule.id === module.id
-                      ? "bg-slate-500 text-slate-200 hover:bg-slate-800"
-                      : "bg-slate-400 text-slate-900 hover:bg-slate-500"
+                      ? "bg-slate-900 text-slate-50"
+                      : "bg-slate-800 text-slate-50 hover:bg-slate-900"
                   )}
                 >
                   {navModule.id === module.id ? (
@@ -40,7 +44,7 @@ const ModulesNav = ({ module, track }) => {
                   ) : (
                     <IconArrowRight width="14px" weight="thin" />
                   )}
-                  <div>{navModule.title}</div>
+                  <p className="">{navModule.title}</p>
                   <div>{humanReadableTimeFromSeconds(navModule.length)}</div>
                 </div>
               </Link>
