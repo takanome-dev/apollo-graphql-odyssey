@@ -4,6 +4,9 @@ Welcome to the companion app of Odyssey Lift-off I! You can [find the course les
 
 You can [preview the completed demo app here](https://lift-off-client-demo.netlify.app/).
 
+![apollo-odysse](https://user-images.githubusercontent.com/79809121/230736885-c75dae64-bb4f-430e-a5fa-0e6d76117d9f.png)
+
+
 ## How to use this repo
 
 The course will walk you step by step on how to implement the features you see in the demo app. This codebase is the starting point of your journey!
