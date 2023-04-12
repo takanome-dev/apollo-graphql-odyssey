@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@apollo/datasource-rest':
-    specifier: ^4.0.0
-    version: 4.1.0(graphql@16.6.0)
+    specifier: ^5.0.0
+    version: 5.0.0(graphql@16.6.0)
   '@apollo/server':
     specifier: ^4.0.0
     version: 4.0.0(graphql@16.6.0)
@@ -29,17 +29,18 @@ packages:
       graphql: 16.6.0
     dev: false
 
-  /@apollo/datasource-rest@4.1.0(graphql@16.6.0):
-    resolution: {integrity: sha512-93t664OrAaDjdGfVJhIX8cTSB93JsW2EeN4MrikWagDJbrQEKLlB10jKEeUhkH6OH99dAnuos5nRauZ2RBmUlA==}
+  /@apollo/datasource-rest@5.0.0(graphql@16.6.0):
+    resolution: {integrity: sha512-ErJYVjIbPK5m3MkSBARh7FPl1kMl9BujaCFYN16xJAziRKheBXHgiycK2usdElfyFinUdZNYkGcZ8XJyzi2ppA==}
     engines: {node: '>=14.0'}
-    requiresBuild: true
     peerDependencies:
       graphql: ^16.5.0
     dependencies:
-      '@apollo/utils.fetcher': 1.1.1
-      '@apollo/utils.keyvaluecache': 1.0.1
+      '@apollo/utils.fetcher': 2.0.1
+      '@apollo/utils.keyvaluecache': 2.1.1
+      '@types/http-cache-semantics': 4.0.1
       graphql: 16.6.0
       http-cache-semantics: 4.1.1
+      lodash.isplainobject: 4.0.6
       node-fetch: 2.6.9
     transitivePeerDependencies:
       - encoding
@@ -148,13 +149,6 @@ packages:
   /@apollo/utils.isnodelike@1.1.0:
     resolution: {integrity: sha512-q/Q82kBUSEcx1ED11JO1TYBY781mWluUnBD8NvhjHVsu1K1C5R9BZVUxShyK/V8XcePcRUB5fdWOcBMGwS0KOA==}
     engines: {node: '>=12.13.0'}
-    dev: false
-
-  /@apollo/utils.keyvaluecache@1.0.1:
-    resolution: {integrity: sha512-nLgYLomqjVimEzQ4cdvVQkcryi970NDvcRVPfd0OPeXhBfda38WjBq+WhQFk+czSHrmrSp34YHBxpat0EtiowA==}
-    dependencies:
-      '@apollo/utils.logger': 1.0.1
-      lru-cache: 7.13.1
     dev: false
 
   /@apollo/utils.keyvaluecache@1.0.2:
@@ -352,6 +346,10 @@ packages:
       '@types/express-serve-static-core': 4.17.33
       '@types/qs': 6.9.7
       '@types/serve-static': 1.15.1
+    dev: false
+
+  /@types/http-cache-semantics@4.0.1:
+    resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
     dev: false
 
   /@types/long@4.0.2:
@@ -800,6 +798,10 @@ packages:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
     dev: true
+
+  /lodash.isplainobject@4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+    dev: false
 
   /lodash.sortby@4.7.0:
     resolution: {integrity: sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==}
