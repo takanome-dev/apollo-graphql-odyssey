@@ -1,12 +1,16 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@apollo/client':
     specifier: ^3.7.11
     version: 3.7.11(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@apollo/space-kit':
     specifier: ^9.11.0
-    version: 9.11.0(@emotion/cache@11.10.5)(@emotion/core@10.3.0)(framer-motion@10.10.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 9.11.0(@emotion/cache@11.10.5)(@emotion/core@10.3.0)(framer-motion@11.0.0)(react-dom@18.2.0)(react@18.2.0)
   '@emotion/cache':
     specifier: ^11.10.5
     version: 11.10.5
@@ -20,8 +24,8 @@ dependencies:
     specifier: ^1.2.1
     version: 1.2.1
   framer-motion:
-    specifier: ^10.10.0
-    version: 10.10.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^11.0.0
+    version: 11.0.0(react-dom@18.2.0)(react@18.2.0)
   graphql:
     specifier: ^16.6.0
     version: 16.6.0
@@ -116,7 +120,7 @@ packages:
       zen-observable-ts: 1.2.5
     dev: false
 
-  /@apollo/space-kit@9.11.0(@emotion/cache@11.10.5)(@emotion/core@10.3.0)(framer-motion@10.10.0)(react-dom@18.2.0)(react@18.2.0):
+  /@apollo/space-kit@9.11.0(@emotion/cache@11.10.5)(@emotion/core@10.3.0)(framer-motion@11.0.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-NY9zfWk6qtwzo2JjX01E8RSC1qeMxbpnWyfpyMb9VWiXJfNmmz77MozOmhv5bLHQ1zNPbi1ROprE4A0IWNLmjQ==}
     peerDependencies:
       '@emotion/cache': '>10.0.29'
@@ -140,7 +144,7 @@ packages:
       classnames: 2.3.2
       csstype: 3.1.2
       downshift: 6.1.12(react@18.2.0)
-      framer-motion: 10.10.0(react-dom@18.2.0)(react@18.2.0)
+      framer-motion: 11.0.0(react-dom@18.2.0)(react@18.2.0)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1373,8 +1377,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion@10.10.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-eCsyOcJimIRbx9KOzBTO3j9u1rF/H8/o/ybizYqdrzHkEeHx9L2NcEfGWfV0OHTc1JV17ECVzuZpomupEJ4+dw==}
+  /framer-motion@11.0.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-aRJ7v/upEoorZcgQLE5RvLkYrK2SNGMJ8w+Cwa1pGSFIBxmIJtZT48jcvKduxiFWYskD6pc8bFA6aSmhJLBxzA==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
