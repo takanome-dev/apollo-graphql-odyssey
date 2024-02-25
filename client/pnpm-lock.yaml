@@ -1,9 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@apollo/client':
     specifier: ^3.7.11
-    version: 3.7.11(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 3.7.11(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   '@apollo/space-kit':
     specifier: ^9.11.0
     version: 9.11.0(@emotion/cache@11.10.5)(@emotion/core@10.3.0)(framer-motion@10.10.0)(react-dom@18.2.0)(react@18.2.0)
@@ -24,7 +28,7 @@ dependencies:
     version: 10.10.0(react-dom@18.2.0)(react@18.2.0)
   graphql:
     specifier: ^16.6.0
-    version: 16.6.0
+    version: 16.8.1
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -80,7 +84,7 @@ packages:
       '@jridgewell/trace-mapping': 0.3.17
     dev: true
 
-  /@apollo/client@3.7.11(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
+  /@apollo/client@3.7.11(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-uLg2KtxoAyj9ta7abLxXx8cGRM7HypCkXVmxtL7Ko//N5g37aoJ3ca7VYoFCMUFO1BXBulj+yKVl0U3+ILj5AQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -98,12 +102,12 @@ packages:
       subscriptions-transport-ws:
         optional: true
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.1)
       '@wry/context': 0.7.0
       '@wry/equality': 0.5.3
       '@wry/trie': 0.3.2
-      graphql: 16.6.0
-      graphql-tag: 2.12.6(graphql@16.6.0)
+      graphql: 16.8.1
+      graphql-tag: 2.12.6(graphql@16.8.1)
       hoist-non-react-statics: 3.3.2
       optimism: 0.16.2
       prop-types: 15.8.1
@@ -671,12 +675,12 @@ packages:
     dev: true
     optional: true
 
-  /@graphql-typed-document-node/core@3.2.0(graphql@16.6.0):
+  /@graphql-typed-document-node/core@3.2.0(graphql@16.8.1):
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      graphql: 16.6.0
+      graphql: 16.8.1
     dev: false
 
   /@jridgewell/gen-mapping@0.1.1:
@@ -1155,7 +1159,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /classnames@2.3.2:
@@ -1395,8 +1399,8 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+  /fsevents@2.3.3:
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -1441,18 +1445,18 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /graphql-tag@2.12.6(graphql@16.6.0):
+  /graphql-tag@2.12.6(graphql@16.8.1):
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      graphql: 16.6.0
+      graphql: 16.8.1
       tslib: 2.5.0
     dev: false
 
-  /graphql@16.6.0:
-    resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
+  /graphql@16.8.1:
+    resolution: {integrity: sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: false
 
@@ -2199,7 +2203,7 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /run-parallel@1.2.0:
@@ -2512,7 +2516,7 @@ packages:
       resolve: 1.22.1
       rollup: 3.20.2
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /warning@4.0.3:
